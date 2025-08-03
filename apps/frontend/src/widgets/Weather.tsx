@@ -26,13 +26,23 @@ const conditionGradients: Record<string, string> = {
   Snowy: "from-blue-100 via-white to-blue-200",
 };
 
-const adviceFor = (c: string): string => ({
+const conditionAdvice: Record<string,string> = {
   Rainy: "Bring a raincoat!",
   Snowy: "Wrap up warm!",
   Cloudy: "Sweater Weather?",
   ClearNight: "Clear skies tonight.",
   Sunny: "Don't forget sunscreen!",
-} as Record<string,string>)[c] || "Dress for the day!";
+};
+
+const adviceFor = (c: string): string => conditionAdvice[c] || "Dress for the day!";
+
+export const meta = {
+  name: "Weather",
+  desc: "Current weather at a glance",
+  fullBleed: true,
+  endpoint: "weather",
+  refresh: 30 * 60, // 30 mins
+} as const;
 
 export function WeatherWidget() {
   const [weather, setWeather] = useState<RawWeatherResponse | null>(null);
@@ -89,13 +99,5 @@ export function WeatherWidget() {
     </div>
   );
 }
-
-export const meta = {
-  name: "Weather",
-  desc: "Current weather at a glance",
-  fullBleed: true,
-  endpoint: "weather",
-  refresh: 30 * 60, // 30 mins
-} as const;
 
 export const Component = WeatherWidget;
