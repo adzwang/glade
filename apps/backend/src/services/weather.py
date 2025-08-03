@@ -73,6 +73,6 @@ if __name__ == "__main__":
 
   load_dotenv()
 
-  client = WeatherAPIClient(api_key=os.getenv("WEATHERAPI_KEY"), location=location_mapping["london"])
+  client = WeatherAPIClient(api_key=os.getenv("WEATHERAPI_KEY"), location="london")
   weather = client.get_current_and_forecast(hours=6)
   print(weather)

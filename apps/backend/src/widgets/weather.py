@@ -15,7 +15,7 @@ class WeatherWidget(Widget):
 
   @router.get("/", summary=desc)
   async def get_weather(location: str = Query("London", description="Target city")):
-    client = WeatherAPIClient(api_key=os.getenv("WEATHERAPI_KEY"), location="london")
+    client = WeatherAPIClient(api_key=os.getenv("WEATHERAPI_KEY"), location=location)
 
     return {
       "name": WeatherWidget.name,
