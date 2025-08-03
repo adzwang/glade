@@ -6,13 +6,13 @@ export default function Dashboard() {
 
   return (
     <div
-      className="grid gap-6 overflow-auto scrollbar-glade
+      className="grid gap-6 overflow-visible scrollbar-glade
         [grid-template-columns:repeat(auto-fill,_minmax(clamp(300px,30vw,350px),1fr))]
         [grid-auto-rows:clamp(300px,30vw,350px)]
       "
     >
       {widgets.map(({ meta, Component }) => (
-        <WidgetShell key={meta.name} title={meta.desc}>
+        <WidgetShell key={meta.endpoint} title={meta.name} description={meta.desc} fullBleed={!!meta.fullBleed}>
           <Component />
         </WidgetShell>
       ))}

@@ -27,3 +27,23 @@ html {
   scrollbar-width: thin;
   scrollbar-color: rgba(71,85,105,.45) transparent;
 }
+
+@keyframes hueShift {
+  0%   { filter: hue-rotate(0deg);   }
+  100% { filter: hue-rotate(360deg); }
+}
+
+html::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(120deg, #1e3a8a, #2563eb, #10b981);
+  background-size: 400% 400%;
+  animation: backgroundMove 120s ease infinite, hueShift 60s linear infinite;
+}
+
+@keyframes backgroundMove {
+  0%,100% { background-position: 0% 50%; }
+  50%     { background-position: 100% 50%; }
+}

@@ -20,7 +20,7 @@ export default function Home() {
         </p>
       </header>
 
-      <section className="flex-1 overflow-auto px-6 pb-6">
+      <section className="flex-1 overflow-visible px-6 pb-6">
         <Dashboard />
       </section>
     </main>

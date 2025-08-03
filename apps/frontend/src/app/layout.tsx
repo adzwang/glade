@@ -10,7 +10,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className="
         min-h-screen flex items-center justify-center
         bg-gradient-to-br from-sky-100 to-white
-        dark:from-slate-800 dark:to-black
+        dark:from-slate-500 dark:to-slate-800
         text-gray-900 dark:text-gray-100
       "
     >

@@ -11,7 +11,10 @@ export interface WidgetMeta {
   endpoint: string;
 
   // polling interval in seconds (optional)
-  refresh?: number
+  refresh?: number;
+
+  // override widget default padding
+  fullBleed?: boolean;
 }
 
 export type WidgetModule = {
