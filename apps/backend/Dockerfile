@@ -14,5 +14,5 @@ COPY src ./src
 ENV PYTHONPATH=/app/src
 
 # run
-ENV PORT=8000
+EXPOSE 8000
 CMD ["uv", "run", "uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
