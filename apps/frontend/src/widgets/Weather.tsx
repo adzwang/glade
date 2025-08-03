@@ -29,13 +29,13 @@ const conditionGradients: Record<string, string> = {
 const adviceFor = (c: string): string => ({
   Rainy: "Bring a raincoat!",
   Snowy: "Wrap up warm!",
-  Cloudy: "A light jacket should do.",
+  Cloudy: "Sweater Weather?",
   ClearNight: "Clear skies tonight.",
   Sunny: "Don't forget sunscreen!",
-} as Record<string,string>)[c] || "Stay comfy!";
+} as Record<string,string>)[c] || "Dress for the day!";
 
 export function WeatherWidget() {
-  const [weather, setWeather] = useState<RawWeatherResponse|null>(null);
+  const [weather, setWeather] = useState<RawWeatherResponse | null>(null);
   useEffect(() => {
     fetch(`${BACKEND_BASE_URL}/api/widgets/${meta.endpoint}/?location=${LOCATION}`)
       .then(res => res.json())
