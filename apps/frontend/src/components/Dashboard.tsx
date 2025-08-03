@@ -1,3 +1,5 @@
+"use client";
+
 import { getWidgets } from "@/lib/widgetLoader";
 import { WidgetShell } from "@/components/WidgetShell";
 
